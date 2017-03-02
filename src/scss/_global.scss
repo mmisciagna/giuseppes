@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  -webkit-font-smoothing: antialiased;
+  color: $color-black-87;
+  font: $font-stack;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.material-icons {
+  font-style: normal !important;
+  vertical-align: middle;
+}
+
+button {
+  border: 0;
+  background: none;
+  appearance: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+a:active,
+a:focus,
+button:active,
+button:focus {
+  outline: 1px dotted $color-black-87;
+}
+
+.main-content {
+  flex: 1;
+  padding: $twice-buffer * 1.5 $buffer $buffer;
+  @include bg-gradient;
+}
+
+.disable-scrolling {
+  overflow: hidden;
+}

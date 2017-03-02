@@ -1,0 +1,35 @@
+.masthead-offset {
+  height: $masthead-height;
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  background: $color-burgandy;
+  height: $masthead-height;
+  position: fixed;
+  padding-left: $buffer;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__logo {
+    box-shadow: 0 0 2px 1px $color-black-38;
+    display: inline-block;
+    width: $logo-width;
+  }
+
+  &__btn {
+    font-size: $font-size-md;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: $masthead-height;
+    width: $masthead-height;
+    color: $color-white;
+
+    @include sm-desktop-up {
+      display: none;
+    }
+  }
+}

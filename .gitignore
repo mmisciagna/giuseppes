@@ -1,0 +1,28 @@
+# OS generated files #
+######################
+**.DS_Store
+**.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Sass #
+######################
+**/.sass-cache/
+*.css.*
+
+# Compiled #
+######################
+*.css
+*.js
+
+# Node generated #
+######################
+node_modules
+_deps
+npm-debug.log
+.DS_Store
+*.map
+

@@ -1,0 +1,74 @@
+.overlay {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $color-amber;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $ease-out;
+
+  &--isActive {
+    visibility: visible;
+    opacity: .8;
+  }
+
+  @include sm-desktop-up {
+    display: none;
+  }
+}
+
+.nav {
+  position: fixed;
+  height: 100%;
+  width: 320px;
+  right: 0;
+  top: 0;
+  transition: opacity $ease-out;
+  opacity: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
+  text-align: left;
+  @include bg-gradient;
+
+  &--isActive {
+    box-shadow: 0 0 5px 1px $color-black-12;
+    opacity: 1;
+  }
+
+  @include sm-desktop-up {
+    background: none;
+    box-shadow: none;
+    position: relative;
+    opacity: 1;
+    text-align: right;
+  }
+
+  &__header {
+    height: $masthead-height;
+    position: relative;
+    background: $color-burgandy;
+
+    @include sm-desktop-up {
+      display: none;
+    }
+  }
+
+  &__item {
+    color: $color-black-87;
+    display: block;
+    font-size: $font-size-x-sm;
+    text-decoration: none;
+    margin: 0 $buffer;
+    line-height: $masthead-height;
+    border-bottom: 1px solid $color-black-12;
+    transition: all $ease-out;
+
+    @include sm-desktop-up {
+      border: none;
+      color: $color-white;
+      display: inline-block;
+    }
+  }
+}
