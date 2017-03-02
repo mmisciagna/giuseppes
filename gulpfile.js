@@ -11,6 +11,7 @@ const buffer = require('vinyl-buffer');
 const stringify = require('stringify');
 const watchify = require('watchify');
 const autoprefixer = require('gulp-autoprefixer');
+const ngAnnotate = require('ng-annotate');
 
 const config = {
   index: './index.html',
@@ -58,6 +59,7 @@ gulp.task('js', () => {
       .pipe($.sourcemaps.init({
         loadMaps: true
       }))
+      .pipe($.ngAnnotate())
       .pipe($.uglify())
       .pipe(rename('main.min.js'))
       .pipe($.sourcemaps.write('./'))

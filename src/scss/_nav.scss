@@ -1,74 +1,99 @@
-.overlay {
+.nav {
+  background: $color-overlay;
   display: block;
   position: fixed;
-  width: 100%;
   height: 100%;
-  background: $color-amber;
+  width: 100%;
+  right: 0;
+  top: 0;
+  transition: all $ease-out;
   opacity: 0;
+  flex: 1;
+  text-align: left;
   visibility: hidden;
-  transition: opacity $ease-out;
-
-  &--isActive {
-    visibility: visible;
-    opacity: .8;
-  }
 
   @include sm-desktop-up {
     display: none;
   }
-}
-
-.nav {
-  position: fixed;
-  height: 100%;
-  width: 320px;
-  right: 0;
-  top: 0;
-  transition: opacity $ease-out;
-  opacity: 0;
-  overflow: hidden;
-  overflow-y: auto;
-  flex: 1;
-  text-align: left;
-  @include bg-gradient;
 
   &--isActive {
-    box-shadow: 0 0 5px 1px $color-black-12;
     opacity: 1;
+    visibility: visible;
   }
 
-  @include sm-desktop-up {
+  &--desktop {
+    display: none;
     background: none;
     box-shadow: none;
     position: relative;
     opacity: 1;
-    text-align: right;
+    visibility: visible;
+
+    @include sm-desktop-up {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__content {
+    box-shadow: 0 0 5px 1px $color-black-12;
+    width: 320px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    background: $color-bg-gradient;
   }
 
   &__header {
     height: $masthead-height;
     position: relative;
     background: $color-burgandy;
-
-    @include sm-desktop-up {
-      display: none;
-    }
   }
 
   &__item {
-    color: $color-black-87;
     display: block;
-    font-size: $font-size-x-sm;
+    color: $color-black-38;
+    font-size: $font-size-md;
     text-decoration: none;
     margin: 0 $buffer;
-    line-height: $masthead-height;
     border-bottom: 1px solid $color-black-12;
+    font-weight: $font-weight-light;
+    padding: $buffer 0;
+    position: relative;
     transition: all $ease-out;
 
-    @include sm-desktop-up {
+    &--isActive {
+      color: $color-burgandy;
+      border-color: $color-burgandy;
+    }
+
+    @include hover {
+      color: $color-burgandy;
+      border-color: $color-burgandy;
+    }
+
+    &--desktop {
+      display: inline-block;
       border: none;
       color: $color-white;
-      display: inline-block;
+      letter-spacing: 1px;
+      line-height: $masthead-height;
+      font-size: $font-size-x-sm;
+      font-weight: $font-weight-bold;
+      padding: 0 $buffer;
+      margin: 0;
+
+      &--isActive {
+        background-color: $color-black-12;
+      }
+
+      @include hover {
+        color: $color-white;
+        background-color: $color-black-12;
+      }
     }
   }
 }

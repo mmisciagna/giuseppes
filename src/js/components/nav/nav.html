@@ -1,0 +1,15 @@
+<nav class="nav js-toggle-nav"
+    ng-class="{'nav--isActive': navCtrl.isActive}"
+    ng-click="navCtrl.toggleNav($event)">
+  <div class="nav__content">
+    <div class="nav__header">
+      <button class="material-icons masthead__btn js-toggle-nav">close</button>
+    </div>
+    <a ng-repeat="item in navCtrl.items"
+        class="nav__item"
+        ng-class="{'nav__item--isActive': navCtrl.setActiveNav('{{item | slugify}}')}"
+        href="#/{{item | slugify}}">
+      {{item}}
+    </a>
+  </div>
+</nav>

@@ -47,8 +47,7 @@ button:focus {
 
 .main-content {
   flex: 1;
-  padding: $twice-buffer * 1.5 $buffer $buffer;
-  @include bg-gradient;
+  background: $color-bg-gradient;
 }
 
 .disable-scrolling {

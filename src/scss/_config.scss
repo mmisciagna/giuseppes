@@ -22,15 +22,8 @@ $color-burgandy: #7F313E;
 $color-amber: #FFF8E1;
 $color-white: #FFF;
 
-$color-overlay: rgba(235,235,235,.8);
-
-@mixin bg-gradient {
-  background: $color-amber; /* Old browsers */
-  background: -moz-linear-gradient(top, $color-white 0%, $color-amber 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, $color-white 0%,$color-amber 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, $color-white 0%,$color-amber 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-white', endColorstr='$color-amber',GradientType=0 ); /* IE6-9 */
-}
+$color-overlay: $color-black-12;
+$color-bg-gradient: linear-gradient(to bottom, $color-white 0%, $color-amber 100%);
 
 // Font.
 $font-stack: 400 16px/1.7em 'Montserrat Alternates', Arial, sans-serif;
@@ -39,7 +32,7 @@ $font-size-lg: 34px;
 $font-size-md: 24px;
 $font-size-sm: 20px;
 $font-size-normal: 16px;
-$font-size-x-sm: 14px;
+$font-size-x-sm: 12px;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -47,7 +40,7 @@ $font-weight-bold: 500;
 
 // Masthead.
 $masthead-height: 50px;
-$logo-width: 225px;
+$logo-height: 80px;
 
 // Breakpoints and media queries.
 $breakpoint-mobile: 320px;

@@ -1,5 +1,6 @@
 .masthead-offset {
-  height: $masthead-height;
+  min-height: $logo-height;
+  max-height: $logo-height;
 }
 
 .masthead {
@@ -16,7 +17,7 @@
   &__logo {
     box-shadow: 0 0 2px 1px $color-black-38;
     display: inline-block;
-    width: $logo-width;
+    height: $logo-height;
   }
 
   &__btn {

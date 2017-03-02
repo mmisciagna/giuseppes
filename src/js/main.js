@@ -1,9 +1,9 @@
-const Nav = require('./nav');
+const mainController = require('./main-controller');
+const slugifyFilter = require('./filters/slugify');
 
-const isTouchDevice = 'ontouchstart' in document.documentElement;
-if (!isTouchDevice) {
-  document.documentElement.classList.add('no-touch');
-}
-
-const nav = document.getElementsByClassName('nav')[0];
-new Nav(nav);
+const main = angular.module('main', [
+  require('./components/masthead/masthead').name,
+  require('./components/nav/nav').name
+])
+    .controller('MainCtrl', mainController)
+    .filter('slugify', slugifyFilter);

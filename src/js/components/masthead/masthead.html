@@ -1,0 +1,15 @@
+<header class="masthead">
+  <a href="index.html">
+    <img class="masthead__logo" src="/images/logo.png" alt="Giuseppe's logo">
+  </a>
+  <button class="material-icons masthead__btn js-toggle-nav"
+      ng-click="navCtrl.toggleNav($event)">menu</button>
+  <nav class="nav nav--desktop">
+    <a ng-repeat="item in navCtrl.items"
+        class="nav__item nav__item--desktop"
+        ng-class="{'nav__item--desktop--isActive': navCtrl.setActiveNav('{{item | slugify}}')}"
+        href="#/{{item | slugify}}">
+      {{item}}
+    </a>
+  </nav>
+</header>

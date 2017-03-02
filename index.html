@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="main"
+    ng-controller="MainCtrl as main"
+    ng-class="{'no-touch': !main.isTouchDevice}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,26 +13,10 @@
     <link rel="stylesheet"href="//fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500">
     <link rel="stylesheet" type="text/css" href="/css/main.min.css">
   </head>
-  <body>
-    <div class="overlay js-toggle-nav"></div>
+  <body ng-class="{'disable-scrolling': disableScrolling}">
     <div class="masthead-offset"></div>
-    <header class="masthead">
-      <a href="index.html">
-        <img class="masthead__logo" src="/images/logo.png" alt="Giuseppe's logo">
-      </a>
-      <button class="material-icons masthead__btn js-toggle-nav">menu</button>
-      <nav class="nav">
-        <div class="nav__header">
-          <button class="material-icons masthead__btn js-toggle-nav">close</button>
-        </div>
-        <a class="nav__item" href="#">Home</a>
-        <a class="nav__item" href="#">About</a>
-        <a class="nav__item" href="#">Catering</a>
-        <a class="nav__item" href="#">Banquets</a>
-        <a class="nav__item" href="#">Menu</a>
-        <a class="nav__item" href="#">Contact</a>
-      </nav>
-    </header>
+    <div masthead></div>
+    <div mobile-nav></div>
     <main class="main-content">
       <div class="block">
         <p>At Giuseppe's, our food is great because it's cooked to order! We use only the freshest ingredients, whether it be homegrown herbs to fresh caught seafood. Giuseppe's has provided great dining for years, lunch or dinner. But now, we're excited to offer catering and luncheons to go. That's right. You can get the same lunch and dinner specials we serve everyday at your home, office or place of business.</p>
@@ -38,6 +24,7 @@
         <p>Take a look around and come into Giuseppe's Italian Restaurant sometime soon!</p>
       </div>
     </main>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <script src="/js/main.min.js"></script>
   </body>
 </html>
