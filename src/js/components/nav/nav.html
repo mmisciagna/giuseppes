@@ -6,7 +6,7 @@
       <button class="material-icons masthead__btn js-toggle-nav">close</button>
     </div>
     <a ng-repeat="item in navCtrl.items"
-        class="nav__item"
+        class="nav__item js-toggle-nav"
         ng-class="{'nav__item--isActive': navCtrl.setActiveNav('{{item | slugify}}')}"
         href="#/{{item | slugify}}">
       {{item}}
