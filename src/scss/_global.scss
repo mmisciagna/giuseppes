@@ -45,6 +45,10 @@ button:focus {
   outline: 1px dotted $color-black-87;
 }
 
+strong {
+  font-weight: $font-weight-bold;
+}
+
 .main-content {
   flex: 1;
   background: $color-bg-gradient;

@@ -1,0 +1,36 @@
+.footer {
+  &__nav {
+    border-top: 1px solid $color-black-12;
+  }
+
+  &__nav-item {
+    font-weight: $font-weight-light;
+    font-size: $font-size-normal;
+    display: block;
+    padding: $buffer 0;
+    border-bottom: 1px solid $color-black-12;
+    color: $color-black-38;
+    text-decoration: none;
+    line-height: 1;
+    transition: color $ease-out;
+
+    @include tablet-up {
+      border: none;
+      font-size: $font-size-x-sm;
+      padding: 0;
+      margin-right: $buffer;
+      margin-top: $buffer;
+      display: inline-block;
+      font-weight: $font-weight-bold;
+    }
+
+    &--isActive {
+      color: $color-black-87;
+      font-weight: $font-weight-bold;
+    }
+
+    @include hover {
+      color: $color-black-87;
+    }
+  }
+}

@@ -4,6 +4,7 @@ const slugifyFilter = require('./filters/slugify');
 
 const main = angular.module('main', [
   'ngRoute',
+  require('./components/footer/footer').name,
   require('./components/masthead/masthead').name,
   require('./components/nav/nav').name
 ])

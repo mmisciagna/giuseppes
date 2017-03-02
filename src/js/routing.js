@@ -2,19 +2,19 @@
 module.exports = ($routeProvider, $locationProvider) => {
   $locationProvider.hashPrefix('');
   $routeProvider.when('/', {
-   templateUrl: '/views/home.html'
+   redirectTo: '/home'
   }).when('/home', {
    templateUrl: '/views/home.html'
   }).when('/about', {
-   templateUrl: '/views/home.html'
+   templateUrl: '/views/about.html'
   }).when('/catering', {
-   templateUrl: '/views/home.html'
+   templateUrl: '/views/catering.html'
   }).when('/banquets', {
-   templateUrl: '/views/home.html'
+   templateUrl: '/views/banquets.html'
   }).when('/menu', {
-   templateUrl: '/views/home.html'
+   templateUrl: '/views/menu.html'
   }).when('/contact', {
-   templateUrl: '/views/home.html'
+   templateUrl: '/views/contact.html'
   }).otherwise({
    redirectTo: '/home'
   })

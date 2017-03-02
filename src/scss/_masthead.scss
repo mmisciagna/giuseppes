@@ -14,9 +14,17 @@
   left: 0;
   width: 100%;
 
+  &__header {
+    margin: 0;
+  }
+
+  &__anchor {
+    display: block;
+  }
+
   &__logo {
     box-shadow: 0 0 2px 1px $color-black-38;
-    display: inline-block;
+    display: block;
     height: $logo-height;
   }
 

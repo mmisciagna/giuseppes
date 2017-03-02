@@ -1,0 +1,42 @@
+<footer class="footer">
+  <div class="block block--row">
+    <div class="width width--50">
+      <h3 class="block__subheader">
+        Contact
+      </h3>
+      <p class="block__paragraph">
+        2539 E Stone Dr.</br>
+        Kingsport TN 37660
+      </p>
+      <p class="block__paragraph">
+        <strong>Phone:</strong> (423) 288-5265</br>
+        <strong>E-mail:</strong> giuseppeskingsport@gmail.com
+      </p>
+    </div>
+    <div class="width width--50">
+      <h3 class="block__subheader">
+        Location
+      </h3>
+      <p class="block__paragraph">
+        <div class="embed">
+          <div class="embed__wrapper">
+            <iframe class="embed__iframe"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12821.11036734132!2d-82.4984905!3d36.5474192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8279d872c0b5d541!2sGiuseppe&#39;s!5e0!3m2!1sen!2sus!4v1488488844875"
+                allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
+  <div class="block">
+    <div class="footer__nav">
+      <a ng-repeat="item in navCtrl.items"
+          class="footer__nav-item"
+          ng-class="{'footer__nav-item--isActive': navCtrl.setActiveNav('{{item | slugify}}')}"
+          href="#/{{item | slugify}}">
+        {{item}}
+      </a>
+    </div>
+  </div>
+</footer>
