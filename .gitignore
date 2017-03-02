@@ -15,8 +15,8 @@ Thumbs.db
 
 # Compiled #
 ######################
-*.css
-*.js
+/css
+/js
 
 # Node generated #
 ######################
@@ -25,4 +25,3 @@ _deps
 npm-debug.log
 .DS_Store
 *.map
-
