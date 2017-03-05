@@ -46,6 +46,7 @@
     overflow: hidden;
     overflow-y: auto;
     background: $color-bg-gradient;
+    padding-bottom: $buffer;
   }
 
   &__header {
