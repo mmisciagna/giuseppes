@@ -1,6 +1,6 @@
 .masthead-offset {
-  min-height: $logo-height;
-  max-height: $logo-height;
+  min-height: $masthead-height;
+  max-height: $masthead-height;
 }
 
 .masthead {
@@ -13,6 +13,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 
   &__header {
     margin: 0;

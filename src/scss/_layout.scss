@@ -19,6 +19,7 @@
   max-width: $content-max-width;
   margin: $twice-buffer auto;
   padding: 0 $buffer;
+  position: relative;
 
   &--row {
     padding: 0;
@@ -29,12 +30,42 @@
     }
   }
 
+  &--right {
+    display: flex;
+    justify-content: center;
+
+    @include tablet-up {
+      justify-content: flex-end;
+    }
+  }
+
+  &__caption {
+    background: $color-black-38;
+    padding: $buffer;
+    color: $color-white;
+    font-size: $font-size-lg;
+    line-height: 1.25em;
+    font-weight: $font-weight-light;
+    max-width: 300px;
+  }
+
   &__header {
     margin: $buffer 0;
     line-height: 1.125em;
     font-size: $font-size-lg;
     font-weight: $font-weight-light;
-    color: $color-black-38;
+    color: $color-green;
+
+    &--script {
+      font-family: 'Italianno', cursive;
+      font-size: $font-size-lg * 3;
+      color: $color-green;
+      line-height: 1;
+      transform: rotate(-4deg);
+      position: relative;
+      left: -$buffer;
+      margin: 0;
+    }
   }
 
   &__subheader {
@@ -66,4 +97,10 @@
     top: 0;
     border: none;
   }
+}
+
+.full-span {
+  background: $color-black-87;
+  position: relative;
+  padding: $buffer 0;
 }
