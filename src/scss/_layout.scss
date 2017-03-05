@@ -46,7 +46,10 @@
     font-size: $font-size-lg;
     line-height: 1.25em;
     font-weight: $font-weight-light;
-    max-width: 300px;
+
+    @include tablet-up {
+      max-width: 300px;
+    }
   }
 
   &__header {
