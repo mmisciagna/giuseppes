@@ -54,6 +54,11 @@ strong {
   font-weight: $font-weight-bold;
 }
 
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
 .main-content {
   flex: 1;
   background: $color-bg-gradient;

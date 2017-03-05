@@ -61,13 +61,17 @@
 
     &--script {
       font-family: 'Italianno', cursive;
-      font-size: $font-size-lg * 3;
+      font-size: $font-size-lg * 2;
       color: $color-green;
       line-height: 1;
-      transform: rotate(-4deg);
       position: relative;
-      left: -$buffer;
       margin: 0;
+
+      @include tablet-up {
+        font-size: $font-size-lg * 3;
+        transform: rotate(-4deg);
+        left: -$buffer;
+      }
     }
   }
 
@@ -81,6 +85,17 @@
 
   &__paragraph {
     margin: $buffer 0;
+
+    &--row {
+      margin: 0;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &-row-item {
+      margin-right: $half-buffer;
+      display: inline-block;
+    }
   }
 }
 
