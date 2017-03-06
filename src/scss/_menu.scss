@@ -1,0 +1,53 @@
+.menu {
+  max-width: $content-max-width;
+  margin: 0 auto;
+
+  &__section {
+    margin: $twice-buffer 0;
+  }
+
+  &__subheader {
+    font-size: $font-size-md;
+    margin: $buffer 0;
+    line-height: 1.125em;
+    font-weight: $font-weight-regular;
+    color: $color-burgandy;
+    padding: 0 $buffer;
+  }
+
+  &__items {
+    @include tablet-up {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 0 $buffer;
+    margin: $buffer 0;
+
+    @include tablet-up {
+      min-width: 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__item-details {
+    display: flex;
+    justify-content: space-between;
+    font-weight: $font-weight-bold;
+    align-items: flex-end;
+  }
+
+  &__item-name {
+  }
+
+  &__item-price {
+    color: $color-green;
+    text-align: right;
+  }
+
+  &__item-description {
+    color: $color-black-38;
+  }
+}

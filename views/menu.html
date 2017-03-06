@@ -12,14 +12,19 @@
     <i class="material-icons">favorite</i> denotes healthy options.
   </p>
 </div>
-<div class="block" ng-repeat="menu in menuCtrl.items">
-  <h3 class="block__subheader">{{menu.section}}</h3>
-  <div class="block--row">
-    <div class="width width--50" ng-repeat="item in menu.items">
-      <p class="block__paragraph">
-        <i ng-if="item.healthy" class="material-icons">favorite</i> <strong>{{item.name}}</strong>..... <strong class="block__caption">{{item.price}}</strong><br>
-        <span ng-if="item.description">{{item.description}}</span>
-      </p>
+<div class="menu">
+  <div class="menu__section" ng-repeat="menu in menuCtrl.items">
+    <h3 class="menu__subheader">{{menu.section}}</h3>
+    <div class="menu__items">
+      <div class="menu__item" ng-repeat="item in menu.items">
+        <div class="menu__item-details">
+          <div class="menu__item-name">
+            <i ng-if="item.healthy" class="material-icons">favorite</i> {{item.name}}
+          </div>
+          <div class="menu__item-price">{{item.price}}</div>
+        </div>
+        <div class="menu__item-description">{{item.description}}</div>
+      </div>
     </div>
   </div>
 </div>
