@@ -7,5 +7,19 @@
   </div>
 </div>
 <div class="block">
-  <p class="block__header">Menu</p>
+  <p class="block__paragraph">All of Giuseppe's meals are prepared to Order because We are Passionate about Great Food!</p>
+  <p class="block__paragraph">
+    <i class="material-icons">favorite</i> denotes healthy options.
+  </p>
+</div>
+<div class="block" ng-repeat="menu in menuCtrl.items">
+  <h3 class="block__subheader">{{menu.section}}</h3>
+  <div class="block--row">
+    <div class="width width--50" ng-repeat="item in menu.items">
+      <p class="block__paragraph">
+        <i ng-if="item.healthy" class="material-icons">favorite</i> <strong>{{item.name}}</strong>..... <strong class="block__caption">{{item.price}}</strong><br>
+        <span ng-if="item.description">{{item.description}}</span>
+      </p>
+    </div>
+  </div>
 </div>

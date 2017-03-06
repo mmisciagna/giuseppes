@@ -12,7 +12,8 @@ module.exports = ($routeProvider, $locationProvider) => {
   }).when('/banquets', {
    templateUrl: '/views/banquets.html'
   }).when('/menu', {
-   templateUrl: '/views/menu.html'
+   templateUrl: '/views/menu.html',
+   controller: 'MenuCtrl as menuCtrl'
   }).when('/contact', {
    templateUrl: '/views/contact.html'
   }).otherwise({

@@ -7,10 +7,12 @@
   }
 
   &--50 {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
 
     @include tablet-up {
-      width: 50%;
+      min-width: 50%;
+      max-width: 50%;
     }
   }
 }
@@ -23,6 +25,7 @@
 
   &--row {
     padding: 0;
+    flex-wrap: wrap;
 
     @include tablet-up {
       display: flex;
@@ -52,22 +55,6 @@
     font-size: $font-size-lg;
     font-weight: $font-weight-light;
     color: $color-green;
-    max-width: 700px;
-
-    &--script {
-      font-family: 'Italianno', cursive;
-      font-size: $font-size-lg * 2;
-      color: $color-green;
-      line-height: 1;
-      position: relative;
-      margin: 0;
-
-      @include tablet-up {
-        font-size: $font-size-lg * 3;
-        transform: rotate(-4deg);
-        left: -$buffer;
-      }
-    }
   }
 
   &__subheader {
@@ -76,6 +63,11 @@
     line-height: 1.125em;
     font-weight: $font-weight-regular;
     color: $color-burgandy;
+  }
+
+  &__caption {
+    font-size: $font-size-normal;
+    color: $color-green;
   }
 
   &__paragraph {
