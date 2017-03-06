@@ -15,6 +15,8 @@ const ngAnnotate = require('ng-annotate');
 
 const config = {
   index: './index.html',
+  views: './views/*.html',
+  components: './src/js/components/*/*.html',
   sassDir: './src/scss/',
   sassDestDir: './css/',
   jsSrcDir: './src/js/',
@@ -96,6 +98,8 @@ gulp.task('watch', () => {
     gulp.start('js-reload');
   });
   gulp.watch(config.index).on('change', bs.reload);
+  gulp.watch(config.views).on('change', bs.reload);
+  gulp.watch(config.components).on('change', bs.reload);
 });
 
 gulp.task('build', ['clean', 'js', 'sass']);

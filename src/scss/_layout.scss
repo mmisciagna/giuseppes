@@ -116,6 +116,12 @@
   background: $color-black-87;
   position: relative;
   padding: $buffer 0;
+  align-items: center;
+  display: flex;
+
+  @include sm-desktop-up {
+    min-height: 400px;
+  }
 
   &__bg {
     position: absolute;
