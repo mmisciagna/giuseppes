@@ -13,22 +13,22 @@
   <div class="menu__nav-wrapper">
     <select class="menu__nav-selector"
         ng-options="menu.titleSlug as menu.title.$t for menu in menus | orderBy:'order'"
-        ng-model="menuCtrl.activeMenu"
+        ng-model="activeMenu"
         onchange="window.location.href = '/#/menu/' + this.value.split('string:')[1]">
     </select>
     <div class="menu__nav">
       <a class="menu__nav-item"
           href="/#/menu/{{menu.titleSlug}}"
           ng-repeat="menu in menus | orderBy:'order'"
-          ng-class="{'menu__nav-item--is-active': menuCtrl.activeMenu == menu.titleSlug}"
-          ng-click="menuCtrl.activeMenu = menu.titleSlug">
+          ng-class="{'menu__nav-item--is-active': activeMenu == menu.titleSlug}"
+          ng-click="activeMenu = menu.titleSlug">
         {{menu.title.$t}}
       </a>
     </div>
   </div>
   <div class="menu__section"
       ng-repeat="menu in menus | orderBy:'order'"
-      ng-if="menuCtrl.activeMenu == menu.titleSlug">
+      ng-if="activeMenu == menu.titleSlug">
     <h3 class="menu__subheader">{{menu.title.$t}}</h3>
     <p class="menu__headline" ng-if="menu.entry[0].gsx$headline.$t">
       {{menu.entry[0].gsx$headline.$t}}
