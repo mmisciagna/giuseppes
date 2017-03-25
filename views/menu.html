@@ -8,23 +8,66 @@
 </div>
 <div class="block">
   <p class="block__paragraph">All of Giuseppe's meals are prepared to Order because We are Passionate about Great Food!</p>
-  <p class="block__paragraph">
-    <i class="material-icons">favorite</i> denotes healthy options.
-  </p>
 </div>
 <div class="menu">
-  <div class="menu__section" ng-repeat="menu in menuCtrl.items">
-    <h3 class="menu__subheader">{{menu.section}}</h3>
+  <div class="menu__nav-wrapper">
+    <select class="menu__nav-selector"
+        ng-options="menu.titleSlug as menu.title.$t for menu in menus | orderBy:'order'"
+        ng-model="menuCtrl.activeMenu"
+        onchange="window.location.href = '/#/menu/' + this.value.split('string:')[1]">
+    </select>
+    <div class="menu__nav">
+      <a class="menu__nav-item"
+          href="/#/menu/{{menu.titleSlug}}"
+          ng-repeat="menu in menus | orderBy:'order'"
+          ng-class="{'menu__nav-item--is-active': menuCtrl.activeMenu == menu.titleSlug}"
+          ng-click="menuCtrl.activeMenu = menu.titleSlug">
+        {{menu.title.$t}}
+      </a>
+    </div>
+  </div>
+  <div class="menu__section"
+      ng-repeat="menu in menus | orderBy:'order'"
+      ng-if="menuCtrl.activeMenu == menu.titleSlug">
+    <h3 class="menu__subheader">{{menu.title.$t}}</h3>
+    <p class="menu__headline" ng-if="menu.entry[0].gsx$headline.$t">
+      {{menu.entry[0].gsx$headline.$t}}
+    </p>
     <div class="menu__items">
-      <div class="menu__item" ng-repeat="item in menu.items">
+      <div class="menu__item" ng-repeat="item in menu.entry" ng-if="item.gsx$item.$t">
         <div class="menu__item-details">
           <div class="menu__item-name">
-            <i ng-if="item.healthy" class="material-icons">favorite</i> {{item.name}}
+            <i ng-if="item.gsx$healthy.$t" class="material-icons menu-icon">favorite</i>
+            <span>{{item.gsx$item.$t}}</span>
           </div>
-          <div class="menu__item-price">{{item.price}}</div>
+          <div class="menu__item-price" ng-if="item.gsx$price.$t">
+            {{item.gsx$price.$t}}
+          </div>
         </div>
-        <div class="menu__item-description">{{item.description}}</div>
+        <div class="menu__item-description" ng-if="item.gsx$description.$t">
+          {{item.gsx$description.$t}}
+        </div>
+        <div class="menu__add" ng-if="item.gsx$add.$t">
+          {{item.gsx$add.$t}}
+        </div>
+        <div class="menu__add" ng-if="item.gsx$add_2.$t">
+          {{item.gsx$add_2.$t}}
+        </div>
+        <div class="menu__add" ng-if="item.gsx$add_3.$t">
+          {{item.gsx$add_3.$t}}
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="block">
+  <div class="block__footnote">
+    <p class="block__paragraph">
+      Charge for shared plate - 2.29.<br>
+      An 18% Gratuity is added to Parties of 8 or more.
+    </p>
+    <p class="block__paragraph">
+      <i class="material-icons menu-icon">favorite</i>Healthier options
     </div>
   </div>
 </div>

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="main"
-    ng-controller="MainCtrl as main"
-    ng-class="{'no-touch': !main.isTouchDevice}">
+<html ng-app="main">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +11,11 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500">
     <link rel="stylesheet" type="text/css" href="/css/main.min.css">
   </head>
-  <body ng-class="{'disable-scrolling': disableScrolling}">
+  <body ng-class="{'no-scroll': noScroll}">
     <div class="masthead-offset"></div>
     <div masthead></div>
     <div mobile-nav></div>
-    <main class="main-content" ng-view autoscroll="true"></main>
+    <main class="main-content" ng-view></main>
     <div footer></div>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <script src="//code.angularjs.org/1.6.2/angular-route.min.js"></script>

@@ -1,6 +1,7 @@
 /** @ngInject */
-module.exports = ($routeProvider, $locationProvider) => {
+module.exports = ($routeProvider, $locationProvider, $rootScopeProvider) => {
   $locationProvider.hashPrefix('');
+
   $routeProvider.when('/', {
    redirectTo: '/home'
   }).when('/home', {
@@ -12,8 +13,11 @@ module.exports = ($routeProvider, $locationProvider) => {
   }).when('/banquets', {
    templateUrl: '/views/banquets.html'
   }).when('/menu', {
-   templateUrl: '/views/menu.html',
-   controller: 'MenuCtrl as menuCtrl'
+    templateUrl: '/views/menu.html',
+    controller: 'MenuCtrl as menuCtrl'
+  }).when('/menu/:menu', {
+    templateUrl: '/views/menu.html',
+    controller: 'MenuCtrl as menuCtrl'
   }).when('/contact', {
    templateUrl: '/views/contact.html'
   }).otherwise({

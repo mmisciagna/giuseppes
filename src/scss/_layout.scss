@@ -43,7 +43,7 @@
     background: $color-black-38;
     padding: $buffer;
     color: $color-white;
-    font-size: $font-size-lg;
+    font-size: $font-size-x-lg;
     line-height: 1.25em;
     font-weight: $font-weight-light;
     text-align: center;
@@ -52,13 +52,13 @@
   &__header {
     margin: $buffer 0;
     line-height: 1.125em;
-    font-size: $font-size-lg;
+    font-size: $font-size-x-lg;
     font-weight: $font-weight-light;
     color: $color-green;
   }
 
   &__subheader {
-    font-size: $font-size-md;
+    font-size: $font-size-lg;
     margin: $buffer 0;
     line-height: 1.125em;
     font-weight: $font-weight-regular;
@@ -66,7 +66,7 @@
   }
 
   &__caption {
-    font-size: $font-size-normal;
+    font-size: $font-size-sm;
     color: $color-green;
   }
 
@@ -82,6 +82,19 @@
     &-row-item {
       margin-right: $half-buffer;
       display: inline-block;
+    }
+  }
+
+  &__footnote {
+    border-top: 1px solid $color-black-12;
+    padding-top: $buffer;
+    margin-bottom: $buffer;
+    font-size: $font-size-x-sm;
+    line-height: 1.7em;
+
+    @include tablet-up {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

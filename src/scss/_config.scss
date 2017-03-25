@@ -1,11 +1,5 @@
-$content-max-width: 915px;
+$content-max-width: 900px;
 $ease-out: .3s ease-out;
-
-@mixin hover {
-  .no-touch &:hover {
-    @content;
-  }
-}
 
 // Buffers.
 $buffer: 20px;
@@ -29,11 +23,12 @@ $color-bg-gradient: linear-gradient(to bottom, $color-white 0%, $color-amber 100
 // Font.
 $font-stack: 400 16px/1.7em 'Montserrat Alternates', Arial, sans-serif;
 
-$font-size-lg: 34px;
-$font-size-md: 24px;
-$font-size-sm: 20px;
-$font-size-normal: 16px;
-$font-size-x-sm: 12px;
+$font-size-x-lg: 34px;
+$font-size-lg: 24px;
+$font-size-md: 20px;
+$font-size-sm: 16px;
+$font-size-x-sm: 14px;
+$font-size-x-x-sm: 12px;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;

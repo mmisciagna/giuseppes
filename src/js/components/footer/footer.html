@@ -14,19 +14,19 @@
       </p>
       <p class="block__paragraph block__paragraph--row">
         <span class="block__paragraph-row-item">
-          <img src="/images/payment-visa.png" alt="Pay with Visa">
+          <img class="payment-method" src="/images/payment-visa.png" alt="Pay with Visa">
         </span>
-        <span  class="block__paragraph-row-item">
-          <img src="/images/payment-mastercard.png" alt="Pay with MaterCard">
+        <span class="block__paragraph-row-item">
+          <img class="payment-method" src="/images/payment-mastercard.png" alt="Pay with MaterCard">
         </span>
-        <span  class="block__paragraph-row-item">
-          <img src="/images/payment-discover.png" alt="Pay with Discover">
+        <span class="block__paragraph-row-item">
+          <img class="payment-method" src="/images/payment-discover.png" alt="Pay with Discover">
         </span>
-        <span  class="block__paragraph-row-item">
-          <img src="/images/payment-americanexpress.png" alt="Pay with American Express">
+        <span class="block__paragraph-row-item">
+          <img class="payment-method" src="/images/payment-americanexpress.png" alt="Pay with American Express">
         </span>
-        <span  class="block__paragraph-row-item">
-          <img src="/images/payment-cash.png" alt="Pay with Cash">
+        <span class="block__paragraph-row-item">
+          <img class="payment-method" src="/images/payment-cash.png" alt="Pay with Cash">
         </span>
       </p>
     </div>
@@ -51,7 +51,8 @@
       <a ng-repeat="item in navCtrl.items"
           class="footer__nav-item"
           ng-class="{'footer__nav-item--isActive': navCtrl.setActiveNav('{{item | slugify}}')}"
-          href="#/{{item | slugify}}">
+          href="#/{{item | slugify}}"
+          ng-click="navCtrl.scrollToTop()">
         {{item}}
       </a>
     </div>

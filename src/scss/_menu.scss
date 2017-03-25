@@ -1,18 +1,129 @@
+$menu-nav-item-height: 55px;
+
 .menu {
   max-width: $content-max-width;
   margin: 0 auto;
+  width: 100%;
+
+  @include sm-desktop-up {
+    display: flex;
+  }
 
   &__section {
     margin: $twice-buffer 0;
+
+    @include sm-desktop-up {
+      flex: 1;
+      margin: 0;
+    }
   }
 
   &__subheader {
-    font-size: $font-size-md;
+    display: none;
+    font-size: $font-size-lg;
     margin: $buffer 0;
+    padding: 0 $buffer;
     line-height: 1.125em;
     font-weight: $font-weight-regular;
     color: $color-burgandy;
+
+    @include sm-desktop-up {
+      display: block;
+    }
+  }
+
+  &__headline {
+    margin: $buffer 0;
     padding: 0 $buffer;
+    color: $color-green;
+    font-style: italic;
+  }
+
+  &__nav-wrapper {
+    background: $color-green;
+    margin: 0 $buffer;
+    border-top: $quarter-buffer solid $color-burgandy;
+    position: relative;
+
+    &:after {
+      background: $color-green;
+      content: '';
+      border: 8px solid $color-green;
+      border-top: 8px solid $color-amber;
+      position: absolute;
+      right: $buffer;
+      top: calc(50% - 4px);
+      width: $half-buffer;
+      height: $half-buffer;
+
+      @include sm-desktop-up {
+        display: none;
+      }
+    }
+
+    @include sm-desktop-up {
+      border: none;
+      border-left: $quarter-buffer solid $color-burgandy;
+      min-width: 200px;
+      max-width: 200px;
+    }
+  }
+
+  &__nav-selector {
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    line-height: $menu-nav-item-height - $quarter-buffer;
+    padding: 0 56px 0 $buffer;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: $font-size-lg;
+    color: $color-white;
+    transition: background $ease-out;
+
+    @include sm-desktop-up {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    flex-wrap: nowrap;
+    background: $color-green;
+    overflow: hidden;
+    overflow-x: auto;
+    margin: 0;
+
+    @include sm-desktop-up {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__nav-item {
+    font-size: $font-size-x-sm;
+    line-height: $menu-nav-item-height;
+    font-weight: $font-weight-regular;
+    color: $color-amber;
+    text-align: left;
+    font-weight: $font-weight-bold;
+    white-space: nowrap;
+    padding: 0 $buffer;
+    transition: background $ease-out;
+
+    &--is-active {
+      color: $color-white;
+      background: $color-black-12;
+    }
+
+    &:hover {
+      background: $color-black-12;
+    }
   }
 
   &__items {
@@ -23,10 +134,14 @@
   }
 
   &__item {
-    padding: 0 $buffer;
-    margin: $buffer 0;
+    padding: $buffer 0;
+    margin: $buffer;
+    border-top: 1px solid $color-black-12;
 
     @include tablet-up {
+      padding: 0 $buffer;
+      margin: $buffer 0;
+      border: none;
       min-width: 50%;
       max-width: 50%;
     }
@@ -37,17 +152,44 @@
     justify-content: space-between;
     font-weight: $font-weight-bold;
     align-items: flex-end;
+    margin-bottom: $quarter-buffer;
+
+    @include tablet-up {
+      border-bottom: 1px solid $color-black-12;
+      padding-bottom: $quarter-buffer;
+    }
   }
 
   &__item-name {
+    display: flex;
+    line-height: 1.25em;
+    margin-right: $buffer;
   }
 
   &__item-price {
     color: $color-green;
     text-align: right;
+    font-size: $font-size-x-sm;
+    line-height: 1.25em;
+    white-space: nowrap;
   }
 
   &__item-description {
     color: $color-black-38;
+    font-size: $font-size-x-sm;
+    line-height: 1.5em;
   }
+
+  &__add {
+    font-weight: $font-weight-bold;
+    color: $color-green;
+    font-size: $font-size-x-sm;
+    line-height: 1.5em;
+  }
+}
+
+.menu-icon {
+  margin-right: $quarter-buffer;
+  color: $color-burgandy;
+  font-size: inherit;
 }

@@ -10,7 +10,8 @@
     <a ng-repeat="item in navCtrl.items"
         class="nav__item nav__item--desktop"
         ng-class="{'nav__item--desktop--isActive': navCtrl.setActiveNav('{{item | slugify}}')}"
-        href="#/{{item | slugify}}">
+        href="#/{{item | slugify}}"
+        ng-click="navCtrl.scrollToTop()">
       {{item}}
     </a>
   </nav>

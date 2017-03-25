@@ -5,7 +5,7 @@
 
   &__nav-item {
     font-weight: $font-weight-light;
-    font-size: $font-size-normal;
+    font-size: $font-size-sm;
     display: block;
     padding: $buffer 0;
     border-bottom: 1px solid $color-black-12;
@@ -16,7 +16,7 @@
 
     @include tablet-up {
       border: none;
-      font-size: $font-size-x-sm;
+      font-size: $font-size-x-x-sm;
       padding: 0;
       margin-right: $buffer;
       margin-top: $buffer;
@@ -29,8 +29,13 @@
       font-weight: $font-weight-bold;
     }
 
-    @include hover {
+    &:hover {
       color: $color-black-87;
     }
   }
+}
+
+.payment-method {
+  max-width: 60px;
+  width: 100%;
 }
