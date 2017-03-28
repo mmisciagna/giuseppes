@@ -2,7 +2,7 @@ $menu-nav-item-height: 55px;
 
 .menu {
   max-width: $content-max-width;
-  margin: 0 auto;
+  margin: $twice-buffer auto;
   width: 100%;
 
   @include sm-desktop-up {
@@ -192,4 +192,5 @@ $menu-nav-item-height: 55px;
   margin-right: $quarter-buffer;
   color: $color-burgandy;
   font-size: inherit;
+  line-height: 1.25;
 }
