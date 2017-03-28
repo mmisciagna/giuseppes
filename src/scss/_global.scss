@@ -75,3 +75,13 @@ img {
 .no-scroll {
   overflow: hidden;
 }
+
+::-moz-selection {
+  color: $color-amber;
+  background: $color-burgandy;
+}
+
+::selection {
+  color: $color-amber;
+  background: $color-burgandy;
+}
